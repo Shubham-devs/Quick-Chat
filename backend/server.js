@@ -44,12 +44,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound)
 app.use(errorHandler)
 
-if (process.env.NODE_ENV !== "production") {
-    const PORT = process.env.PORT || 5000
-    const server = app.listen(PORT, console.log(`Server Started on PORT ${PORT}`.yellow.bold));
-}
+// if (process.env.NODE_ENV !== "production") {
+const PORT = process.env.PORT || 5000
+const server = app.listen(PORT, console.log(`Server Started on PORT ${PORT}`.yellow.bold));
+// }
 
-export default server;
+// export default server;
 // const server = app.listen(5000, console.log(`Server Started on PORT ${PORT}`.yellow.bold));
 
 const io = require("socket.io")(server, {
